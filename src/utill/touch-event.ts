@@ -1,8 +1,10 @@
 import { UpdatingState } from './../assets/interfaces/interfaces';
+type LongEnough = number;
 class TouchEvent {
-	private readonly longEnough: number;
+	private readonly longEnough: LongEnough = 300;
 	private timer: ReturnType<typeof setInterval> | undefined;
-	constructor(longEnough: number = 300) {
+
+	constructor(longEnough: LongEnough) {
 		this.longEnough = longEnough;
 	}
 
