@@ -111,12 +111,19 @@ interface ICardItemStyleProps {
 
 type CardItemProps = {
 	card: CardInfo<NormalCityNames> | CardInfo<VacationSpotNames>;
-	updateCard: UpdatingState<CardInfo<NormalCityNames> | CardInfo<VacationSpotNames>>;
+	updateCard: UpdatingState<
+		CardInfo<NormalCityNames> | CardInfo<VacationSpotNames>
+	>;
 	selectedCard: CardInfo<NormalCityNames | VacationSpotNames> | null;
 	displayDialog: UpdatingState<boolean>;
 };
 
-function CardItem({ card, updateCard, selectedCard, displayDialog }: CardItemProps) {
+function CardItem({
+	card,
+	updateCard,
+	selectedCard,
+	displayDialog,
+}: CardItemProps) {
 	const { name, src, id, belonged, color, isFestival, olympicPhase } = card;
 	const isSelected: boolean = id === selectedCard?.id;
 	const touchEvent = new TouchEvent();

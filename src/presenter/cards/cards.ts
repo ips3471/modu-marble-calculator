@@ -14,18 +14,26 @@ class CardsPresenter {
 	// private normalCityInfos: Infos<NormalCityNames>;
 	// private vacationSpotsInfos: Infos<VacationSpotNames>;
 	private cardInfos: Infos<NormalCityNames> & Infos<VacationSpotNames>;
-	private readonly normalCityCosts: Costs<NormalCityBuildOptions, NormalCityNames>;
+	private readonly normalCityCosts: Costs<
+		NormalCityBuildOptions,
+		NormalCityNames
+	>;
 	private readonly vacationSpotCosts: Costs<
 		VacationSpotBuildOptions,
 		VacationSpotNames
 	>;
-	private selectedCard: CardInfo<NormalCityNames> | CardInfo<VacationSpotNames> | null =
-		null;
+	private selectedCard:
+		| CardInfo<NormalCityNames>
+		| CardInfo<VacationSpotNames>
+		| null = null;
 
 	constructor(cardDB: CardsDB) {
 		// this.normalCityInfos = cardDB.normalCityInfos;
 		// this.vacationSpotsInfos = cardDB.vacationSpotInfos;
-		this.cardInfos = { ...cardDB.vacationSpotInfos, ...cardDB.normalCityInfos };
+		this.cardInfos = {
+			...cardDB.vacationSpotInfos,
+			...cardDB.normalCityInfos,
+		};
 		this.normalCityCosts = cardDB.normalCityCosts;
 		this.vacationSpotCosts = cardDB.vacationSpotCosts;
 	}
@@ -50,22 +58,27 @@ class CardsPresenter {
 
 	updateCard(
 		card: CardInfo<NormalCityNames> | CardInfo<VacationSpotNames>,
-		update: React.Dispatch<CardInfo<NormalCityNames> | CardInfo<VacationSpotNames>>,
+		update: React.Dispatch<
+			CardInfo<NormalCityNames> | CardInfo<VacationSpotNames>
+		>,
 		// option?: keyof CardInfo<NormalCityNames | VacationSpotNames>,
 	) {
 		this.selectedCard = card;
 		update(this.selectedCard);
 	}
 
-	changeBelongedState(card: CardInfo<NormalCityNames> | CardInfo<VacationSpotNames>) {
+	changeBelongedState(
+		card: CardInfo<NormalCityNames> | CardInfo<VacationSpotNames>,
+	) {
 		const cards = { ...this.cardInfos };
 		cards[card.name].belonged = !cards[card.name].belonged;
-
 		this.cardInfos = cards;
 		// rendering
 	}
 
-	changeOlympicPhase(card: CardInfo<NormalCityNames> | CardInfo<VacationSpotNames>) {
+	changeOlympicPhase(
+		card: CardInfo<NormalCityNames> | CardInfo<VacationSpotNames>,
+	) {
 		const cards = { ...this.cardInfos };
 		const selected = cards[card.name];
 
@@ -75,7 +88,9 @@ class CardsPresenter {
 		Object.keys(cards).forEach(cardName => {
 			if (cardName === selected.name) {
 				selected.olympicPhase++;
-			} else if (cards[cardName as keyof typeof cards].olympicPhase >= 1) {
+			} else if (
+				cards[cardName as keyof typeof cards].olympicPhase >= 1
+			) {
 				cards[cardName as keyof typeof cards].olympicPhase = 0;
 			}
 		});
@@ -84,7 +99,9 @@ class CardsPresenter {
 		// rendering
 	}
 
-	changeFestivalState(card: CardInfo<NormalCityNames> | CardInfo<VacationSpotNames>) {
+	changeFestivalState(
+		card: CardInfo<NormalCityNames> | CardInfo<VacationSpotNames>,
+	) {
 		const cards = { ...this.cardInfos };
 		const selected = cards[card.name];
 

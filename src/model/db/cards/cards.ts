@@ -139,7 +139,10 @@ class CardsDB {
 		},
 	};
 
-	readonly vacationSpotCosts: Costs<VacationSpotBuildOptions, VacationSpotNames> = {
+	readonly vacationSpotCosts: Costs<
+		VacationSpotBuildOptions,
+		VacationSpotNames
+	> = {
 		독도: {
 			flag: {
 				buy: 10,
@@ -270,7 +273,7 @@ class CardsDB {
 			line: '1',
 			color: 'dark-green',
 			isVacationSpot: false,
-			name: '방콕',
+			name: '타이페이',
 			src: this.BASE_SRC + '4.jpg',
 			belonged: false,
 			isFestival: false,
