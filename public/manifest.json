@@ -1,5 +1,5 @@
 {
-	"name": "모두의마블 계산기",
+	"name": "모두의마블 메가디럭스 계산기",
 	"short_name": "모마 계산기",
 	"categories": ["entertainment", "games", "kids"],
 	"icons": [
@@ -36,47 +36,10 @@
 	],
 	"start_url": "/index.html",
 	"scope": "/",
-	"display": "fullscreen",
+	"display": "standalone",
 	"display_override": ["fullscreen", "standalone"],
 	"orientation": "portrait",
 	"background_color": "#000",
-	"description": "모두의마블 메가디럭스 오프라인 보드게임을 위한 전용계산기",
-	"screenshots": [
-		{
-			"src": "/screenshots/select_card.png",
-			"size": "1170x2532",
-			"type": "image/png",
-			"platform": "narrow",
-			"label": "원하는 도시를 선택하고 어떤 건물을 짓거나 통행료를 지불할지 결정하세요"
-		},
-		{
-			"src": "/screenshots/select_event.png",
-			"size": "1170x2532",
-			"type": "image/png",
-			"platform": "narrow",
-			"label": "특정한 도시에 올림픽 또는 축제를 개최할 수 있습니다"
-		},
-		{
-			"src": "/screenshots/select_event_2.png",
-			"size": "1170x2532",
-			"type": "image/png",
-			"platform": "narrow",
-			"label": "특정한 도시에 올림픽 또는 축제를 개최할 수 있습니다"
-		},
-		{
-			"src": "/screenshots/event_result.png",
-			"size": "1170x2532",
-			"type": "image/png",
-			"platform": "narrow",
-			"label": "올림픽 또는 축제가 개최된 도시에서는 통행료가 증가합니다"
-		},
-		{
-			"src": "/screenshots/card_user_customize.png",
-			"size": "1170x2532",
-			"type": "image/png",
-			"platform": "narrow",
-			"label": "소유중인 도시를 한눈에 확인 할 수 있습니다"
-		}
-	],
+	"description": "모두의마블 메가디럭스 보드게임을 빠르게 즐기세요",
 	"theme_color": "#000000"
 }
